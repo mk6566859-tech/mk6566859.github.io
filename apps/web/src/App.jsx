@@ -21,6 +21,8 @@ export default function App() {
         {/* Public Routes */}
         <Route element={<AppShell />}>
           <Route path="/" element={<HomePage />} />
+          {/* Keep the previous #home URL working for existing visitors. */}
+          <Route path="/home" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />

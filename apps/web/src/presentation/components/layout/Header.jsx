@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const links = [
-  { label: "Home", to: "#home" },
-  { label: "Projects", to: "#projects" },
-  { label: "About", to: "#about" },
-  { label: "Contact", to: "#contact" }
+  { label: "Home", to: "/" },
+  { label: "Projects", to: "/projects" },
+  { label: "About", to: "/about" },
+  { label: "Contact", to: "/contact" }
 ];
 
 export function Header() {
@@ -19,13 +19,13 @@ export function Header() {
 
         <nav className="main-nav" aria-label="Primary navigation">
           {links.map((link) => (
-            <a
+            <Link
               key={link.to}
-              href={link.to}
+              to={link.to}
               className="nav-link"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <Link className="nav-link admin-link" to="/admin">
             Admin
