@@ -8,8 +8,8 @@ export const profile = {
   githubUrl: "https://github.com/mk6566859-tech",
   email: "mk6566859@gmail.com",
   phone: "0319-3304773",
-  resumeUrl: "/resume/Malik_Muhammad_Kashan_Resume.docx",
-  imageUrl: "/images/malik-muhammad-kashan.jpeg",
+  resumeUrl: `${import.meta.env.BASE_URL}resume/Malik_Muhammad_Kashan_Resume.docx`,
+  imageUrl: `${import.meta.env.BASE_URL}images/malik-muhammad-kashan.jpeg`,
   skills: [
     "React",
     "JavaScript",
