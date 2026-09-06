@@ -20,6 +20,15 @@ export function usePortfolio() {
   useEffect(() => {
     let active = true;
 
+    const isLocalDev = typeof window !== "undefined" && ["localhost", "127.0.0.1"].includes(window.location.hostname);
+
+    if (!isLocalDev) {
+      setState({ loading: false, profile: fallbackProfile, projects: fallbackProjects, error: null });
+      return () => {
+        active = false;
+      };
+    }
+
     getPortfolioData()
       .then((data) => {
         if (active) setState({ loading: false, ...data, error: null });
